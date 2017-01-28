@@ -186,7 +186,7 @@ def handle_sticker_message(event):
             sticker_id=event.message.sticker_id)
     )
 
-
+#
 # Other Message Type
 @handler.add(MessageEvent, message=(ImageMessage, VideoMessage, AudioMessage))
 def handle_content_message(event):
