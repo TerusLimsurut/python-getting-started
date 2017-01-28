@@ -255,10 +255,7 @@ def handle_beacon(event):
         event.reply_token,
         TextSendMessage(text='Got beacon event. hwid=' + event.beacon.hwid))
 		
-//# FUse TEST #
-//	os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
-//	from django.core.management import execute_from_command_line
-//    execute_from_command_line(sys.argv)
+
 
 if __name__ == "__main__":
 	
