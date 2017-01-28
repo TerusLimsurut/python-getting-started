@@ -20,12 +20,7 @@ from __future__ import unicode_literals
 import errno
 import os
 import sys
-if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
 
-    from django.core.management import execute_from_command_line
-
-    execute_from_command_line(sys.argv)
 import tempfile
 from argparse import ArgumentParser
 
@@ -263,6 +258,13 @@ def handle_beacon(event):
 
 
 if __name__ == "__main__":
+	# FUse TEST #
+	os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
+
+    from django.core.management import execute_from_command_line
+
+    execute_from_command_line(sys.argv)
+	#########
     arg_parser = ArgumentParser(
         usage='Usage: python ' + __file__ + ' [--port <port>] [--help]'
     )
@@ -274,3 +276,5 @@ if __name__ == "__main__":
     make_static_tmp_dir()
 
     app.run(debug=options.debug, port=options.port)
+
+    
