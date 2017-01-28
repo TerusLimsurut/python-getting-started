@@ -15,7 +15,7 @@
 
 
 from __future__ import unicode_literals
-
+from argparse import ArgumentParser
 import errno
 import os
 import sys
@@ -25,15 +25,15 @@ if __name__ == "__main__":
     from django.core.management import execute_from_command_line
 
     execute_from_command_line(sys.argv)
-	#arg_parser = ArgumentParser(usage='Usage: python ' + __file__ + ' [--port <port>] [--help]')
-    #arg_parser.add_argument('-p', '--port', default=8000, help='port')
-    #arg_parser.add_argument('-d', '--debug', default=False, help='debug')
-    #options = arg_parser.parse_args()
+	arg_parser = ArgumentParser(usage='Usage: python ' + __file__ + ' [--port <port>] [--help]')
+    arg_parser.add_argument('-p', '--port', default=8000, help='port')
+    arg_parser.add_argument('-d', '--debug', default=False, help='debug')
+    options = arg_parser.parse_args()
 
     make_static_tmp_dir()
     app.run(debug=options.debug, port=options.port)
 import tempfile
-from argparse import ArgumentParser
+
 
 from flask import Flask, request, abort
 
