@@ -254,10 +254,15 @@ def handle_beacon(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text='Got beacon event. hwid=' + event.beacon.hwid))
-	
+
+		
 if __name__ == "__main__":
-	os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
+
     from django.core.management import execute_from_command_line
+
     execute_from_command_line(sys.argv)
+	
+
 
     
