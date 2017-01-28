@@ -12,7 +12,7 @@
 #  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #  License for the specific language governing permissions and limitations
 #  under the License.
-from django.core.management import execute_from_command_line
+
 
 from __future__ import unicode_literals
 
@@ -257,11 +257,15 @@ def handle_beacon(event):
 	
 if __name__ == "__main__":
 	os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
+    from django.core.management import execute_from_command_line
     execute_from_command_line(sys.argv)
+	
+    #arg_parser = ArgumentParser(usage='Usage: python ' + __file__ + ' [--port <port>] [--help]')
+    #arg_parser.add_argument('-p', '--port', default=8000, help='port')
+    #arg_parser.add_argument('-d', '--debug', default=False, help='debug')
+    #options = arg_parser.parse_args()
 
-    # create tmp dir for download content
     make_static_tmp_dir()
-
     app.run(debug=options.debug, port=options.port)
 
     
