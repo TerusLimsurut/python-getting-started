@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 #  Licensed under the Apache License, Version 2.0 (the "License"); you may
 #  not use this file except in compliance with the License. You may obtain
@@ -13,7 +13,6 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 
-from django.core.management import execute_from_command_line
 
 from __future__ import unicode_literals
 
@@ -255,13 +254,14 @@ def handle_beacon(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text='Got beacon event. hwid=' + event.beacon.hwid))
-
+		
+//# FUse TEST #
+//	os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
+//	from django.core.management import execute_from_command_line
+//    execute_from_command_line(sys.argv)
 
 if __name__ == "__main__":
-	# FUse TEST #
-	os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
-
-    execute_from_command_line(sys.argv)
+	
 	#########
     arg_parser = ArgumentParser(
         usage='Usage: python ' + __file__ + ' [--port <port>] [--help]'
